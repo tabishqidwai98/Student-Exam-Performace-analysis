@@ -75,16 +75,16 @@ def update_graph(Studyhours, PreviousExamScore, btn1):
     #return "Study Hours : {}, PreviousExamScore : {}".format(Studyhours, PreviousExamScore)
     arrdetails = ['Fail', 'Pass'] 
     if "btn-nclicks-1" == ctx.triggered_id:
-            if Studyhours != None and PreviousExamScore != None:
-                try:
-                    arrInput = np.array([Studyhours, PreviousExamScore])
-                    features = standardScaler.transform(arrInput.reshape(1, -1))
-                    PassFail = model.predict(features)[0]
-                    return 'As per the data entered the student will {}'.format(arrdetails[PassFail])
-                except ValueError:
-                    return 'Unable to give Result Pass or Fail'
-            else:
-                return "Input is Empty"
+        if Studyhours != None and PreviousExamScore != None:
+            try:
+                arrInput = np.array([Studyhours, PreviousExamScore])
+                features = standardScaler.transform(arrInput.reshape(1, -1))
+                PassFail = model.predict(features)[0]
+                return 'As per the data entered the student will {}'.format(arrdetails[PassFail])
+            except ValueError:
+                return 'Unable to give Result Pass or Fail'
+        else:
+            return "Input is Empty"
             
 
 
