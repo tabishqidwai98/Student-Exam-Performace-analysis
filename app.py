@@ -5,7 +5,7 @@ import seaborn as sns
 from dash import Dash, html, dcc, callback, Output, Input, dash_table, ctx
 import joblib
 
-df = pd.read_csv("C:/Users/tabis/Desktop/Student Exam Performace analysis/data/student_exam_data.csv")
+df = pd.read_csv("data/student_exam_data.csv")
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = Dash(__name__,external_stylesheets=external_stylesheets)
